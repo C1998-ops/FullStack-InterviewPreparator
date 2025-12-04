@@ -1,29 +1,37 @@
 {
-  "name": "curated-list-for-javascript-interviews",
+  "name": "awesome-javascript-interviews",
   "version": "1.0.0",
-  "description": "**A curated list of resources for JavaScript Interviews**",
-  "main": "random-code-1.js",
+  "description": "A curated list of resources for JavaScript Interviews",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "build": "node scripts/generate-static-data.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "javascript",
+    "interview",
+    "preparation"
+  ],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
+    "express": "^4.19.2",
     "axios": "^0.18.1",
     "immutability-helper": "^2.7.1",
     "lodash": "^4.17.21",
     "request": "^2.87.0"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "devDependencies": {
+    "tslint": "^6.1.2",
+    "typescript": "^4.0.0-beta"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rohan-paul/Awesome-JavaScript-Interviews.git"
   },
-  "author": "",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/rohan-paul/Awesome-JavaScript-Interviews/issues"
   },
-  "homepage": "https://github.com/rohan-paul/Awesome-JavaScript-Interviews#readme",
-  "devDependencies": {
-    "tslint": "^6.1.2",
-    "typescript": "^4.0.0-beta"
-  }
+  "homepage": "https://github.com/rohan-paul/Awesome-JavaScript-Interviews#readme"
 }

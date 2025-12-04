@@ -12,12 +12,9 @@
 
 - 🐦 TWITTER: https://twitter.com/rohanpaul_ai
 - 🟠 YouTube: https://www.youtube.com/channel/UC0_a8SNpTFkmVv5SLMs1CIA/videos
-- ​👨‍🔧​ Kaggle: https://www.kaggle.com/paulrohan2020
 - 👨🏻‍💼 LINKEDIN: https://www.linkedin.com/in/rohan-paul-b27285129/
 - 👨‍💻 GITHUB: https://github.com/rohan-paul
 - 🤖: My Website and Blog: https://rohan-paul-ai.netlify.app/
-- 🧑‍🦰 Facebook Page: https://www.facebook.com/rohanpaulai
-- 📸 Instagram: https://www.instagram.com/rohan_paul_2020/
 
 ---
 
@@ -1203,3 +1200,27 @@
 - [Scalyr Engineering Blog ](https://blog.scalyr.com/)
 
 [[↑] Back to top](#table-of-contents-of-this-readme-file)
+
+## Credits & Acknowledgements
+
+### Original Content Creator
+
+This project is based on the amazing work by **[Rohan Paul](https://github.com/rohan-paul)**.
+
+- [Twitter](https://twitter.com/rohanpaul_ai)
+- [GitHub](https://github.com/rohan-paul)
+- [Website](https://rohan-paul-ai.netlify.app/)
+
+### App Development & Curation
+
+**[Chetan Kumar GN](https://www.linkedin.com/in/chetan-kumar-g-n-1045a9202/)**
+_Full Stack Developer (4 Years Experience)_
+
+This interactive browser application was developed to bring these resources together in a user-friendly format.
+
+- **App Architecture**: Created a client-server architecture for easy browsing.
+- **Interactive UI**: Built a responsive sidebar with nested folder support.
+- **Content Rendering**: Implemented dynamic Markdown and JavaScript file rendering.
+- **Static Deployment**: Added support for static hosting (GitHub Pages/Amplify).
+
+_Built with ❤️ for the JavaScript community._
