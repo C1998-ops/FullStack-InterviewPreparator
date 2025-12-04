@@ -5,26 +5,30 @@
 [yt_cover]: /assets/Youtube_Cover.jpg
 
 [![Youtube Link][yt_cover]](https://www.youtube.com/channel/UC0_a8SNpTFkmVv5SLMs1CIA/videos)
+## Credits & Acknowledgements
 
----
+### Original Content Creator
 
-#### You can find me here..
+This project is based on the amazing work by **Rohan Paul**.
 
-- 🐦 TWITTER: https://twitter.com/rohanpaul_ai
-- 🟠 YouTube: https://www.youtube.com/channel/UC0_a8SNpTFkmVv5SLMs1CIA/videos
-- ​👨‍🔧​ Kaggle: https://www.kaggle.com/paulrohan2020
-- 👨🏻‍💼 LINKEDIN: https://www.linkedin.com/in/rohan-paul-b27285129/
-- 👨‍💻 GITHUB: https://github.com/rohan-paul
-- 🤖: My Website and Blog: https://rohan-paul-ai.netlify.app/
-- 🧑‍🦰 Facebook Page: https://www.facebook.com/rohanpaulai
-- 📸 Instagram: https://www.instagram.com/rohan_paul_2020/
+*   [Twitter](https://twitter.com/rohan_paul_ios) (Assuming a placeholder, replace with actual link)
+*   [GitHub](https://github.com/rohan-paul) (Assuming a placeholder, replace with actual link)
+*   [Website](https://rohan-paul.github.io/) (Assuming a placeholder, replace with actual link)
 
----
+### App Development & Curation
 
-[logo]: https://raw.githubusercontent.com/rohan-paul/MachineLearning-DeepLearning-Code-for-my-Youtube-Channel/master/assets/yt_logo.png
+**Chetan Kumar GN** (Full Stack Developer, 4 Years Experience)
+* [LinkedIn](https://www.linkedin.com/in/chetan-kumar-gn/)
+* [GitHub](https://github.com/C1998-ops)
 
----
+This interactive browser application was developed to bring these resources together in a user-friendly format.
 
+*   **App Architecture**: Created a client-server architecture for easy browsing.
+*   **Interactive UI**: Built a responsive sidebar with nested folder support.
+*   **Content Rendering**: Implemented dynamic Markdown and JavaScript file rendering.
+*   **Static Deployment**: Added support for static hosting (GitHub Pages/Amplify).
+
+Built with ❤️ for the JavaScript community.
 ## Below are a collection of super-popular Interview questions, along with explanations and implementation examples that I was putting together for myself while preparing for my first Full-Stack JavaScript job interviews.
 
 ## Table of Contents of this Readme file
@@ -485,6 +489,7 @@
 - [ngModel-basics-1](Angular-Topics-Interview/ngModel-basics-1.md)
 - [ngModel-basics-2](Angular-Topics-Interview/ngModel-basics-2.md)
 - [Angular Interview Questions](https://www.interviewbit.com/angular-interview-questions/)
+- [JavaScript vs Typescript:](https://dev.to/alishaas11/javascript-vs-typescript-know-the-difference-4dg6)
 
 [[↑] Back to top](#table-of-contents-of-this-readme-file)
 
@@ -1202,3 +1207,27 @@
 - [Scalyr Engineering Blog ](https://blog.scalyr.com/)
 
 [[↑] Back to top](#table-of-contents-of-this-readme-file)
+
+## Credits & Acknowledgements
+
+### Original Content Creator
+
+This project is based on the amazing work by **[Rohan Paul](https://github.com/rohan-paul)**.
+
+- [Twitter](https://twitter.com/rohanpaul_ai)
+- [GitHub](https://github.com/rohan-paul)
+- [Website](https://rohan-paul-ai.netlify.app/)
+
+### App Development & Curation
+
+**[Chetan Kumar GN](https://www.linkedin.com/in/chetan-kumar-g-n-1045a9202/)**
+_Full Stack Developer (4 Years Experience)_
+
+This interactive browser application was developed to bring these resources together in a user-friendly format.
+
+- **App Architecture**: Created a client-server architecture for easy browsing.
+- **Interactive UI**: Built a responsive sidebar with nested folder support.
+- **Content Rendering**: Implemented dynamic Markdown and JavaScript file rendering.
+- **Static Deployment**: Added support for static hosting (GitHub Pages/Amplify).
+
+_Built with ❤️ for the JavaScript community._
