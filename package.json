@@ -9,9 +9,13 @@
     "lodash": "^4.17.21",
     "request": "^2.87.0"
   },
+<<<<<<< Updated upstream
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+=======
+  "devDependencies": {},
+>>>>>>> Stashed changes
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rohan-paul/Awesome-JavaScript-Interviews.git"
