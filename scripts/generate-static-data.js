@@ -127,5 +127,5 @@ const outputData = {
 // To make it static, we'll save the whole tree.
 // The frontend will need to be updated to traverse this tree.
 
-fs.writeFileSync(outputFile, JSON.stringify(folderStructure, null, 2));
+fs.writeFileSync(outputFile, JSON.stringify(outputData, null, 2));
 console.log(`Static data generated at: ${outputFile}`);
