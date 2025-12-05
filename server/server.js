@@ -185,7 +185,7 @@ function getFolderIcon(folderName) {
         "GraphQL": "🔗",
         "Heroku": "☁️",
         "HTML": "📄",
-        "Typscript": "📘",
+        "Typescript": "📘",
         "webpack": "📦",
         "Common-Problem-Set": "🧩",
         "General-Soft_Getting_to_Know_Interview_Questions": "🗣️"

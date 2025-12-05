@@ -535,8 +535,10 @@
         const hamburger = document.getElementById("hamburger");
         const sidebar = document.querySelector(".sidebar");
 
-        // Initialize sidebar as open
-        sidebar.classList.add("open");
+        // Initialize sidebar state
+        if (window.innerWidth > 768) {
+          sidebar.classList.add("open");
+        }
 
         hamburger.addEventListener("click", (e) => {
           e.stopPropagation();
