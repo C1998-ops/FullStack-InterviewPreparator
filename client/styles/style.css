@@ -30,19 +30,31 @@ body {
 }
 
 .sidebar {
-  width: 0;
+  width: 300px;
   background: white;
   border-right: 1px solid #e0e0e0;
   overflow-y: auto;
   overflow-x: hidden;
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-  transition: width 0.3s ease;
+  transition: transform 0.3s ease;
   position: relative;
   flex-shrink: 0;
+  z-index: 100;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateX(-100%);
+    width: 280px;
+  }
 }
 
 .sidebar.open {
-  width: 350px;
+  transform: translateX(0);
 }
 
 .search-box {
@@ -372,6 +384,15 @@ body {
 }
 
 @media (max-width: 768px) {
+  .container {
+    position: relative;
+  }
+
+  .content {
+    padding: 1rem;
+    width: 100%;
+  }
+
   .footer-content {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -379,5 +400,20 @@ body {
 
   .footer {
     padding: 1.5rem 0 1rem;
+  }
+
+  /* Overlay when sidebar is open on mobile */
+  .sidebar.open::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+    /* This pseudo-element approach might be tricky with the sidebar structure. 
+       Better to just handle the sidebar itself. 
+       Let's stick to simple sidebar sliding. */
   }
 }
