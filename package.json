@@ -2,10 +2,16 @@
   "name": "awesome-javascript-interviews",
   "version": "1.0.0",
   "description": "A curated list of resources for JavaScript Interviews",
-  "main": "server/server.js",
+  "private": true,
   "scripts": {
-    "start": "node server/server.js",
-    "build": "node scripts/generate-static-data.js",
+    "dev": "cd client && npm run dev",
+    "dev:server": "cd server && npm run dev",
+    "dev:all": "concurrently \"npm run dev:server\" \"npm run dev\"",
+    "build:data": "node scripts/generate-static-data.js",
+    "build": "npm run build:data && cd client && npm run build",
+    "preview": "cd client && npm run preview",
+    "start": "cd server && npm start",
+    "install:all": "npm install && cd client && npm install && cd ../server && npm install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -15,14 +21,9 @@
   ],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "express": "^4.19.2",
-    "axios": "^0.18.1",
-    "immutability-helper": "^2.7.1",
-    "lodash": "^4.17.21",
-    "request": "^2.87.0"
+  "devDependencies": {
+    "concurrently": "^8.2.2"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rohan-paul/Awesome-JavaScript-Interviews.git"

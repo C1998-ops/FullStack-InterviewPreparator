@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Interview Prep Browser</title>
+    <script type="module" crossorigin src="/assets/index-B0uvD__K.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-L801kMmt.css" />
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-content">
+        <h1>📚 JavaScript Interview Questions</h1>
+      </div>
+      <div class="header-content-right"> <a href="#resume-assistant"></a>Resume Assistant 📄</a></div>
+    </div>
+
+    <div class="container">
+      <div class="sidebar">
+        <div class="search-box" style="position: relative">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="🔍 Search topics..."
+          />
+          <button id="clearSearch" class="clear-button" style="display: none">
+            <span class="clear-icon">❌</span>
+          </button>
+        </div>
+        <div class="folder-tree" id="folderTree">
+          <!-- Folders will be populated by JavaScript -->
+        </div>
+        <div class="empty-tree" id="emptyTree"></div>
+      </div>
+
+      <div class="content">
+        <button class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="content-empty" id="contentEmpty">
+          <div>
+            <h3>👋 Welcome to Your Interview Prep!</h3>
+            <p>Select a file from the sidebar to start studying</p>
+          </div>
+        </div>
+        <div id="contentArea" style="display: none">
+          <div class="breadcrumb" id="breadcrumb"></div>
+          <div class="markdown-content" id="markdownContent"></div>
+        </div>
+
+        <footer class="footer">
+          <div class="footer-content">
+            <div class="footer-section">
+              <h4>💻 App Development</h4>
+              <p><strong>Chetan Kumar GN</strong></p>
+              <p>Full Stack Developer</p>
+              <p class="footer-links">
+                <a
+                  href="https://www.linkedin.com/in/chetan-kumar-gn/"
+                  target="_blank"
+                  rel="noopener"
+                  >LinkedIn</a
+                >
+                •
+                <a
+                  href="https://github.com/C1998-ops"
+                  target="_blank"
+                  rel="noopener"
+                  >GitHub</a
+                >
+              </p>
+            </div>
+            <div class="footer-section">
+              <h4>📚 Content Curation</h4>
+              <p><strong>Rohan Paul</strong></p>
+              <p>Original collection of JavaScript interview resources</p>
+              <p class="footer-links">
+                <a
+                  href="https://github.com/rohan-paul/Awesome-JavaScript-Interviews"
+                  target="_blank"
+                  rel="noopener"
+                  >GitHub Repository</a
+                >
+              </p>
+            </div>
+            <div class="footer-section">
+              <h4>🛠️ Built With</h4>
+              <p>Vanilla JavaScript, HTML5 & CSS3</p>
+              <p class="footer-credits">
+                <a href="https://marked.js.org/" target="_blank" rel="noopener"
+                  >Marked.js</a
+                >
+                for Markdown parsing
+              </p>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <p>
+              &copy; 2025 JavaScript Interview Prep Browser. Web app by Chetan
+              Kumar GN
+            </p>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

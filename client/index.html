@@ -3,562 +3,83 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JavaScript Interview Prep Browser</title>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <link rel="stylesheet" href="./styles/style.css" />
+
+    <!-- SEO / Social Media -->
+    <title>Technical Interview Prep Browser</title>
+    <meta
+      name="description"
+      content="A browser for technical interview preparation"
+    />
+
+    <meta property="og:title" content="Technical Interview Prep Browser" />
+    <meta
+      property="og:description"
+      content="A browser for technical interview preparation"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" />
+
+    <!-- Minimal public shell styles -->
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, Arial,
+          sans-serif;
+      }
+
+      #root {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .loader {
+        text-align: center;
+        color: #333;
+      }
+
+      .loader-text {
+        font-size: 1.1rem;
+        font-weight: 600;
+        animation: loaderTextAnimation 0.6s ease-in-out;
+      }
+
+      @keyframes loaderTextAnimation {
+        from {
+          opacity: 0;
+          transform: translateY(-8px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
   </head>
+
   <body>
-    <div class="header">
-      <h1>📚 JavaScript Interview Questions</h1>
-    </div>
-
-    <div class="container">
-      <div class="sidebar">
-        <div class="search-box" style="position: relative">
-          <input
-            type="text"
-            id="searchInput"
-            placeholder="🔍 Search topics..."
-          />
-          <button id="clearSearch" class="clear-button" style="display: none">
-            <span class="clear-icon">❌</span>
-          </button>
-        </div>
-        <div class="folder-tree" id="folderTree">
-          <!-- Folders will be populated by JavaScript -->
-        </div>
-        <div class="empty-tree" id="emptyTree"></div>
-      </div>
-
-      <div class="content">
-        <button class="hamburger" id="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <div class="content-empty" id="contentEmpty">
-          <div>
-            <h3>👋 Welcome to Your Interview Prep!</h3>
-            <p>Select a file from the sidebar to start studying</p>
-          </div>
-        </div>
-        <div id="contentArea" style="display: none">
-          <div class="breadcrumb" id="breadcrumb"></div>
-          <div class="markdown-content" id="markdownContent"></div>
-        </div>
-
-        <footer class="footer">
-          <div class="footer-content">
-            <div class="footer-section">
-              <h4>💻 App Development</h4>
-              <p><strong>Chetan Kumar GN</strong></p>
-              <p>Full Stack Developer</p>
-              <p class="footer-links">
-                <a
-                  href="https://www.linkedin.com/in/chetan-kumar-gn/"
-                  target="_blank"
-                  rel="noopener"
-                  >LinkedIn</a
-                >
-                •
-                <a
-                  href="https://github.com/C1998-ops"
-                  target="_blank"
-                  rel="noopener"
-                  >GitHub</a
-                >
-              </p>
-            </div>
-            <div class="footer-section">
-              <h4>📚 Content Curation</h4>
-              <p><strong>Rohan Paul</strong></p>
-              <p>Original collection of JavaScript interview resources</p>
-              <p class="footer-links">
-                <a
-                  href="https://github.com/rohan-paul/Awesome-JavaScript-Interviews"
-                  target="_blank"
-                  rel="noopener"
-                  >GitHub Repository</a
-                >
-              </p>
-            </div>
-            <div class="footer-section">
-              <h4>🛠️ Built With</h4>
-              <p>Vanilla JavaScript, HTML5 & CSS3</p>
-              <p class="footer-credits">
-                <a href="https://marked.js.org/" target="_blank" rel="noopener"
-                  >Marked.js</a
-                >
-                for Markdown parsing
-              </p>
-            </div>
-          </div>
-          <div class="footer-bottom">
-            <p>
-              &copy; 2025 JavaScript Interview Prep Browser. Web app by Chetan
-              Kumar GN
-            </p>
-          </div>
-        </footer>
+    <!-- Public shell (shown before React loads) -->
+    <div id="main-app">
+      <div class="loader" aria-live="polite">
+        <h3>Loading…</h3>
+        <p class="loader-text">Please wait while the app loads.</p>
       </div>
     </div>
 
-    <script>
-      const folderIcons = {
-        "Angular-Topics-Interview": "🅰️",
-        React: "⚛️",
-        Javascript: "📜",
-        Redux: "🔄",
-        "Node-Express": "🟢",
-        CSS: "🎨",
-        MongoDB: "🍃",
-        "Promise-Async-Await-Sequential-Execution": "⏳",
-        "Event-Loop-Asynchronous-setTimeout": "🔄",
-        "Fundamental-Algorithms-JS": "🧮",
-        "Collection-of-Popular-Problems-with-Solutions": "💡",
-        "Challenges-from-Popular-Coding-Practice-sites": "🏆",
-        "Collection-of-TakeHome-Exercises": "📝",
-        "Git-and-Github": "🌿",
-        "system-design": "🏗️",
-        "Web-Development-In-General": "🌐",
-        "Collections-of-Questions-NOT-drafted-Ans": "❓",
-        GraphQL: "🔗",
-        Heroku: "☁️",
-        HTML: "📄",
-        Typescript: "📘",
-        webpack: "📦",
-        "Common-Problem-Set": "🧩",
-        "General-Soft_Getting_to_Know_Interview_Questions": "🗣️",
-      };
+    <!-- No-JS fallback -->
+    <noscript>
+      <div style="padding: 2rem; text-align: center">
+        This application requires JavaScript to run.
+      </div>
+    </noscript>
 
-      let folderStructure = {};
-      let currentFolder = null;
-      let currentFile = null;
-
-      async function init() {
-        await loadFolderStructure();
-        renderFolderTree();
-        setupSearchFunctionality();
-      }
-
-      async function loadFolderStructure() {
-        try {
-          // Try to fetch static data.json first (for GitHub/Amplify)
-          const response = await fetch("data.json");
-          if (response.ok) {
-            const data = await response.json();
-            folderStructure = data.folders;
-            console.log("Loaded static data");
-            return;
-          }
-        } catch (e) {
-          console.log("Static data not found, trying API...");
-        }
-
-        try {
-          // Fallback to API (for local dev server)
-          const response = await fetch("/api/folders");
-          if (response.ok) {
-            const folders = await response.json();
-            folderStructure = folders;
-          } else {
-            await loadBasicFolderStructure();
-          }
-        } catch (error) {
-          console.log("Server not available, using basic structure");
-          await loadBasicFolderStructure();
-        }
-      }
-
-      async function loadBasicFolderStructure() {
-        const knownFolders = Object.keys(folderIcons);
-        for (const folder of knownFolders) {
-          folderStructure[folder] = {
-            icon: folderIcons[folder] || "📁",
-            files: [],
-            isDirectory: true,
-          };
-        }
-      }
-
-      function renderFolderTree() {
-        const folderTree = document.getElementById("folderTree");
-        folderTree.innerHTML = "";
-
-        Object.entries(folderStructure).forEach(([folderName, folderData]) => {
-          const folderElement = createFolderElement(folderName, folderData);
-          folderTree.appendChild(folderElement);
-        });
-      }
-
-      function createFolderElement(folderName, folderData) {
-        const folder = document.createElement("div");
-        folder.className = "folder";
-
-        const header = document.createElement("div");
-        header.className = "folder-header";
-        header.onclick = () => toggleFolder(folderName, header);
-
-        header.innerHTML = `
-                <span class="folder-icon">${folderData.icon}</span>
-                <span class="folder-name">${formatFolderName(folderName)}</span>
-            `;
-
-        const fileList = document.createElement("div");
-        fileList.className = "file-list";
-        fileList.id = `files-${folderName}`;
-
-        folder.appendChild(header);
-        folder.appendChild(fileList);
-
-        return folder;
-      }
-
-      function formatFolderName(name) {
-        return name.replace(/-/g, " ").replace(/_/g, " ");
-      }
-
-      function toggleFolder(folderName, headerElement) {
-        const fileList = document.getElementById(`files-${folderName}`);
-        const wasOpen = fileList.classList.contains("open");
-
-        document.querySelectorAll(".file-list").forEach((list) => {
-          list.classList.remove("open");
-        });
-        document.querySelectorAll(".folder-header").forEach((header) => {
-          header.classList.remove("active");
-        });
-
-        if (!wasOpen) {
-          fileList.classList.add("open");
-          headerElement.classList.add("active");
-          currentFolder = folderName;
-          loadFolderContents(folderName);
-        } else {
-          currentFolder = null;
-          showEmptyState();
-        }
-      }
-
-      async function loadFolderContents(folderName) {
-        const fileList = document.getElementById(`files-${folderName}`);
-        fileList.innerHTML = '<div class="loading">Loading files...</div>';
-
-        try {
-          const files = await getFilesInFolder(folderName);
-          renderFileList(folderName, files, fileList);
-        } catch (error) {
-          fileList.innerHTML = '<div class="error">Error loading files</div>';
-        }
-      }
-
-      async function getFilesInFolder(folderName) {
-        // If we have static data structure, the files are already nested in it
-        if (
-          folderStructure[folderName] &&
-          folderStructure[folderName].files &&
-          folderStructure[folderName].files.length > 0
-        ) {
-          return folderStructure[folderName].files;
-        }
-
-        try {
-          const response = await fetch(
-            `/api/files/${encodeURIComponent(folderName)}`
-          );
-          if (response.ok) {
-            const files = await response.json();
-            return files;
-          }
-        } catch (error) {
-          console.log("Server-side file listing not available");
-        }
-
-        return folderStructure[folderName]?.files || [];
-      }
-
-      function renderFileList(folderName, files, parentElement, level = 0) {
-        parentElement.innerHTML = "";
-
-        if (files.length === 0) {
-          parentElement.innerHTML =
-            '<div style="padding: 1rem; color: #6c757d; font-size: 0.8rem;">No files found</div>';
-          return;
-        }
-
-        files.forEach((fileData) => {
-          const fileName = fileData.name;
-          const filePath = fileData.path;
-          const isDirectory = fileData.isDirectory;
-          const icon = fileData.icon || "📄";
-          const hasChildren = fileData.hasChildren || false;
-          const children = fileData.children || [];
-
-          if (isDirectory && hasChildren) {
-            // Create subfolder with expand/collapse
-            const subfolderContainer = document.createElement("div");
-
-            const fileElement = document.createElement("div");
-            fileElement.className = "file-item";
-            fileElement.style.paddingLeft = `${2 + level * 1}rem`;
-            fileElement.innerHTML = `
-                        <span class="file-icon">▶</span>
-                        <span class="file-icon">${icon}</span>
-                        <span>${formatFolderName(fileName)}</span>
-                    `;
-
-            const subFileList = document.createElement("div");
-            subFileList.style.display = "none";
-            subFileList.className = "subfolder-list";
-
-            fileElement.onclick = (e) => {
-              e.stopPropagation();
-              const arrow = fileElement.querySelector(".file-icon:first-child");
-              if (subFileList.style.display === "none") {
-                subFileList.style.display = "block";
-                arrow.textContent = "▼";
-                if (subFileList.children.length === 0) {
-                  renderFileList(folderName, children, subFileList, level + 1);
-                }
-              } else {
-                subFileList.style.display = "none";
-                arrow.textContent = "▶";
-              }
-            };
-
-            subfolderContainer.appendChild(fileElement);
-            subfolderContainer.appendChild(subFileList);
-            parentElement.appendChild(subfolderContainer);
-          } else {
-            // Regular file
-            const fileElement = document.createElement("div");
-            fileElement.className = "file-item";
-            fileElement.style.paddingLeft = `${2 + level * 1}rem`;
-
-            fileElement.onclick = () =>
-              loadFile(folderName, filePath, fileElement, fileData.fileType);
-
-            fileElement.innerHTML = `
-                        <span class="file-icon">${icon}</span>
-                        <span>${formatFolderName(fileName)}</span>
-                    `;
-
-            parentElement.appendChild(fileElement);
-          }
-        });
-      }
-
-      async function loadFile(
-        folderName,
-        filePath,
-        fileElement,
-        fileType = "markdown"
-      ) {
-        document.querySelectorAll(".file-item").forEach((item) => {
-          item.classList.remove("active");
-        });
-        fileElement.classList.add("active");
-
-        currentFile = filePath;
-        showContent();
-        updateBreadcrumb(folderName, filePath);
-
-        const content = document.getElementById("markdownContent");
-        content.innerHTML = '<div class="loading">Loading content...</div>';
-
-        // Check if we have the content in our static structure
-        const fileContent = findContentInStructure(folderName, filePath);
-
-        if (fileContent) {
-          renderContent(content, fileContent, fileType, filePath);
-          return;
-        }
-
-        try {
-          const response = await fetch(
-            `/api/file/${encodeURIComponent(folderName)}/${encodeURIComponent(
-              filePath
-            )}`
-          );
-          if (response.ok) {
-            const data = await response.json();
-            renderContent(content, data.content, fileType, filePath);
-          } else {
-            showError(content, folderName, filePath);
-          }
-        } catch (error) {
-          showError(content, folderName, filePath, true);
-        }
-      }
-
-      function findContentInStructure(folderName, filePath) {
-        let foundContent = null;
-
-        function search(items) {
-          if (!items) return;
-          for (const item of items) {
-            if (item.path === filePath && item.content) {
-              foundContent = item.content;
-              return;
-            }
-            if (item.children) {
-              search(item.children);
-              if (foundContent) return;
-            }
-          }
-        }
-
-        if (folderStructure[folderName]) {
-          search(folderStructure[folderName].files);
-        }
-
-        return foundContent;
-      }
-
-      function renderContent(container, contentText, fileType, filePath) {
-        if (fileType === "javascript" || filePath.endsWith(".js")) {
-          container.innerHTML = `
-                    <h2>📜 ${filePath.split("/").pop()}</h2>
-                    <pre><code>${escapeHtml(contentText)}</code></pre>
-                `;
-        } else {
-          const html = marked.parse(contentText);
-          container.innerHTML = html;
-        }
-      }
-
-      function showError(
-        container,
-        folderName,
-        filePath,
-        isNetworkError = false
-      ) {
-        if (isNetworkError) {
-          container.innerHTML = `
-                    <div class="error">
-                        <h3>Error loading file</h3>
-                        <p>Make sure the server is running or data.json is generated.</p>
-                    </div>
-                `;
-        } else {
-          container.innerHTML = `
-                    <div class="error">
-                        <h3>File not found</h3>
-                        <p>Could not load: ${folderName}/${filePath}</p>
-                    </div>
-                `;
-        }
-      }
-
-      function escapeHtml(text) {
-        const div = document.createElement("div");
-        div.textContent = text;
-        return div.innerHTML;
-      }
-
-      function showContent() {
-        document.getElementById("contentEmpty").style.display = "none";
-        document.getElementById("contentArea").style.display = "block";
-      }
-
-      function showEmptyState() {
-        document.getElementById("contentEmpty").style.display = "flex";
-        document.getElementById("contentArea").style.display = "none";
-      }
-
-      function updateBreadcrumb(folderName, fileName) {
-        const breadcrumb = document.getElementById("breadcrumb");
-        breadcrumb.textContent = `📁 ${formatFolderName(
-          folderName
-        )} > 📄 ${formatFolderName(fileName)}`;
-      }
-
-      function setupSearchFunctionality() {
-        const searchInput = document.getElementById("searchInput");
-        const clearButton = document.getElementById("clearSearch");
-
-        searchInput.addEventListener("input", (e) => {
-          const query = e.target.value.toLowerCase();
-
-          // Show clear button when there's text, hide when empty
-          if (query.length > 0) {
-            clearButton.style.display = "block";
-          } else {
-            clearButton.style.display = "none";
-          }
-
-          filterFolders(query);
-        });
-      }
-
-      function filterFolders(query) {
-        const folders = document.querySelectorAll(".folder");
-        const emptyTree = document.getElementById("emptyTree");
-        let visibleCount = 0;
-
-        folders.forEach((folder) => {
-          const folderName = folder
-            .querySelector(".folder-name")
-            .textContent.toLowerCase();
-
-          if (folderName.includes(query)) {
-            folder.style.display = "block";
-            visibleCount++;
-          } else {
-            folder.style.display = "none";
-          }
-        });
-
-        // Show empty message only if no folders are visible and there's a search query
-        if (query.length > 0 && visibleCount === 0) {
-          emptyTree.style.display = "block";
-          emptyTree.textContent =
-            "No folders found. Try searching with different keywords.";
-        } else {
-          emptyTree.style.display = "none";
-          emptyTree.textContent = "";
-        }
-      }
-
-      function clearSearchTopics() {
-        const button = document.getElementById("clearSearch");
-        button.addEventListener("click", () => {
-          const searchInput = document.getElementById("searchInput");
-          searchInput.value = "";
-          filterFolders("");
-          button.style.display = "none";
-        });
-      }
-      clearSearchTopics();
-
-      function setupHamburgerMenu() {
-        const hamburger = document.getElementById("hamburger");
-        const sidebar = document.querySelector(".sidebar");
-
-        // Initialize sidebar state
-        if (window.innerWidth > 768) {
-          sidebar.classList.add("open");
-        }
-
-        hamburger.addEventListener("click", (e) => {
-          e.stopPropagation();
-          hamburger.classList.toggle("active");
-          sidebar.classList.toggle("open");
-        });
-
-        // Close sidebar when clicking outside
-        document.addEventListener("click", (e) => {
-          if (sidebar.classList.contains("open")) {
-            if (!sidebar.contains(e.target) && !hamburger.contains(e.target)) {
-              sidebar.classList.remove("open");
-              hamburger.classList.remove("active");
-            }
-          }
-        });
-      }
-      setupHamburgerMenu();
-
-      document.addEventListener("DOMContentLoaded", init);
-    </script>
+    <!-- React entry -->
+    <script type="module" src="/src/index.jsx"></script>
   </body>
 </html>

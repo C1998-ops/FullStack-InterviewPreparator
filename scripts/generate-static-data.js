@@ -3,10 +3,11 @@ const path = require('path');
 
 const rootDir = path.join(__dirname, '../');
 const clientDir = path.join(__dirname, '../client');
-const outputFile = path.join(clientDir, 'data.json');
+const publicDir = path.join(clientDir, 'public');
+const outputFile = path.join(publicDir, 'data.json');
 
 // Folders to exclude
-const excludeDirs = ['.git', 'node_modules', 'client', 'server', 'scripts', 'assets'];
+const excludeDirs = ['.git', 'node_modules', 'client', 'server', 'scripts', 'assets', 'dist', 'public'];
 
 function getFilesRecursively(dirPath, relativePath = '') {
     const files = [];
@@ -93,13 +94,15 @@ function getFolderIcon(folderName) {
         "Typscript": "📘",
         "webpack": "📦",
         "Common-Problem-Set": "🧩",
-        "General-Soft_Getting_to_Know_Interview_Questions": "🗣️"
+        "General-Soft_Getting_to_Know_Interview_Questions": "🗣️",
+        "Nest.js": "😼"
     };
     
     return icons[folderName] || "📁";
 }
 
 console.log('Generating static data...');
+fs.mkdirSync(publicDir, { recursive: true });
 const allFiles = getFilesRecursively(rootDir);
 
 // Transform to folder structure format expected by frontend
