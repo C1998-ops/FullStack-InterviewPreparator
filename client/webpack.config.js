@@ -1,0 +1,33 @@
+import path from path;
+module.exports = {
+    entry:'./src/index.jsx',
+    output:{
+        path:path.resolve(__dirname,'dist'),
+        filename:'bundle.js'
+    },
+    module:{
+        rules:[
+            {
+                test:/\.jsx$/,
+                exclude:/node_modules/,
+                use:{
+                    loader:'babel-loader',
+                    options:{
+                        presets:['@babel/preset-react']
+                    }
+                }
+            }
+        ]
+    },
+    resolve:{
+        extensions:['.js','.jsx']
+    },
+    devtool:'source-map',
+    devServer:{
+        contentBase:path.resolve(__dirname,'public'),
+        port:3000,
+        hot:true,
+        open:true,
+        historyApiFallback:true
+    }
+}

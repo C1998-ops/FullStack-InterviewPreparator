@@ -1,0 +1,66 @@
+.home-wrapper {
+    padding: 40px 0;
+    text-align: center;
+  }
+  
+  .hero {
+    padding: 60px 20px;
+    background: linear-gradient(to right, #7158e2, #54a0ff);
+    color: white;
+    border-radius: 12px;
+    margin-bottom: 40px;
+  }
+  
+  .hero h1 {
+    font-size: 2.4rem;
+    font-weight: bold;
+  }
+  
+  .hero p {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    opacity: 0.9;
+  }
+  
+  .hero-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .btn {
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  
+  .btn.primary {
+    background: white;
+    color: #4b4b4b;
+  }
+  
+  .btn.secondary {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid white;
+  }
+  
+  .features {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  
+  .feature-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+    text-align: center;
+  }
+  

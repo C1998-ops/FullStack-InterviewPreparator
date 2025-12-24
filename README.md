@@ -29,6 +29,40 @@ This interactive browser application was developed to bring these resources toge
 *   **Static Deployment**: Added support for static hosting (GitHub Pages/Amplify).
 
 Built with ❤️ for the JavaScript community.
+
+## 🚀 Quick Start
+
+This project consists of two separate applications:
+
+- **Client**: React + Vite frontend application (`/client`)
+- **Server**: Express.js backend API server (`/server`)
+
+### Installation
+
+```bash
+npm run install:all
+```
+
+### Development
+
+```bash
+# Start both client and server
+npm run dev:all
+
+# Or start separately:
+npm run dev:server  # Express on :3000
+npm run dev          # Vite on :5173
+```
+
+### Production Build
+
+```bash
+npm run build    # Build client + generate data
+npm start        # Start production server
+```
+
+📖 **For detailed setup instructions, see [SETUP.md](./SETUP.md)**
+
 ## Below are a collection of super-popular Interview questions, along with explanations and implementation examples that I was putting together for myself while preparing for my first Full-Stack JavaScript job interviews.
 
 ## Table of Contents of this Readme file

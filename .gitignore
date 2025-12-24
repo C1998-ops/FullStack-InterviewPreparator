@@ -234,3 +234,8 @@ performance-1.js
 **/*-test.ipynb
 **/*-test.md
 **/*-test.json
+
+# Temporary resume files
+temp_resume.pdf
+**/temp_resume.pdf
+*.temp_resume.pdf
