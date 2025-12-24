@@ -3,14 +3,13 @@ frontend:
   phases:
     preBuild:
       commands:
-        - cd client
-        - npm ci
+        - cd client # Navigate to your frontend folder
+        - npm ci # Install dependencies
     build:
       commands:
-        - cd client
-        - npm run build
+        - npm run build # THIS is where you run your build command
   artifacts:
-    baseDirectory: client/dist
+    baseDirectory: client/dist # or 'client/build' depending on your framework
     files:
       - "**/*"
   cache:

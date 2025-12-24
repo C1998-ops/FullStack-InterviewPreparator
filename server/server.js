@@ -33,10 +33,15 @@ app.use((req, res, next) => {
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept, Authorization"
   );
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, PATCH, OPTIONS");
+  res.header(
+    "Access-Control-Allow-Methods",
+    "GET, POST, PUT, DELETE, PATCH, OPTIONS"
+  );
   next();
 });
-
+app.get("/test-api", (req, res) => {
+  res.json({ message: "API is working" });
+});
 app.use("/api", apiRouter);
 
 // Catch-all handler: send back React app for client-side routing

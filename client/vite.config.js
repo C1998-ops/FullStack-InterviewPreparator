@@ -18,6 +18,7 @@ const config = {
     host: true,
     port: 5173,
     proxy: {
+      //used only in development mode
       "/api": {
         target: "http://localhost:3000",
         changeOrigin: true,
