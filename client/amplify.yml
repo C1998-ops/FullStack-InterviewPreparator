@@ -7,11 +7,11 @@ frontend:
         - npm ci # Install dependencies
     build:
       commands:
-        - npm run build # THIS is where you run your build command
+        - npm run build
   artifacts:
-    baseDirectory: client/dist # or 'client/build' depending on your framework
+    baseDirectory: client/dist
     files:
-      - "**/*"
+      - '**/*'
   cache:
     paths:
       - client/node_modules/**/*
