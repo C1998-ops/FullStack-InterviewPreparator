@@ -3,8 +3,8 @@ frontend:
   phases:
     preBuild:
       commands:
-        - cd client
-        - npm ci
+        - cd client # Navigate to your frontend folder
+        - npm ci # Install dependencies
     build:
       commands:
         - npm run build

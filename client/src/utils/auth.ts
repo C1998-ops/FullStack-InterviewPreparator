@@ -55,7 +55,10 @@ export const exchangeCodeForTokenViaBackend = async (
   expiresAt?: number | null;
   expiresIn?: number;
 }> => {
-  const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:3000/api";
+  const apiUrl =
+    import.meta.env.VITE_ENVIRONMENT === "development"
+      ? import.meta.env.VITE_API_URL_DEVELOPMENT
+      : import.meta.env.VITE_API_URL_PRODUCTION;
 
   const response = await axios.post(
     `${apiUrl}/auth/pkce-token`,
